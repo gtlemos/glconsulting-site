@@ -3,66 +3,100 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A GL Consulting ajuda pequenas e médias empresas a organizar a gestão, criar controles simples e tomar decisões com mais clareza.">
-  <meta name="theme-color" content="#101d32">
-  <title>GL Consulting | Clareza para decidir. Gestão para crescer.</title>
+  <meta name="theme-color" content="#101d2b">
+  <meta name="description" content="A GL Consulting ajuda pequenas empresas a organizar a gestão, estruturar operações e tomar decisões com mais clareza. Consultoria empresarial em Ponta Grossa, Curitiba e região.">
+  <meta property="og:title" content="GL Consulting | Business Management & Advisory">
+  <meta property="og:description" content="Clareza para administrar. Confiança para crescer.">
+  <meta property="og:type" content="website">
+  <title>GL Consulting | Business Management & Advisory</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script src="config.js" defer></script>
+  <script src="config.js"></script>
   <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main" data-i18n="skip">Pular para o conteúdo</a>
+  <div class="topline"></div>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="GL Consulting - início">
-        <span class="brand-mark">GL</span>
-        <span class="brand-name">CONSULTING<span class="brand-dot">.</span></span>
+      <a class="brand" href="#home" aria-label="GL Consulting home">
+        <span class="brand-mark"><span>G</span><b>L</b></span>
+        <span class="brand-copy"><strong>GL CONSULTING</strong><small>BUSINESS MANAGEMENT &amp; ADVISORY</small></span>
       </a>
-      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="main-nav" class="main-nav">
-        <a href="#about" data-i18n="nav_about">Sobre</a>
-        <a href="#services" data-i18n="nav_services">Serviços</a>
-        <a href="#method" data-i18n="nav_method">Como trabalhamos</a>
-        <a href="#contact" data-i18n="nav_contact">Contato</a>
-        <button class="language-switch" id="language-switch" type="button" aria-label="Switch language">EN</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#services" data-i18n="navServices">Serviços</a>
+        <a href="#approach" data-i18n="navApproach">Como trabalhamos</a>
+        <a href="#founder" data-i18n="navFounder">Fundador</a>
+        <a href="#contact" class="nav-cta" data-i18n="navContact">Vamos conversar</a>
+        <button class="language-switch" id="languageSwitch" type="button" aria-label="Switch language">EN</button>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero" id="top">
+  <main>
+    <section class="hero" id="home">
       <div class="hero-grid"></div>
       <div class="container hero-content">
-        <p class="eyebrow" data-i18n="hero_eyebrow">CONSULTORIA DE NEGÓCIOS</p>
-        <h1 data-i18n="hero_title">Clareza para decidir.<br><span>Gestão para crescer.</span></h1>
-        <p class="hero-copy" data-i18n="hero_copy">Ajudamos pequenas e médias empresas a organizar a gestão, entender seus números e transformar informação em decisões práticas.</p>
+        <p class="eyebrow"><span></span><span data-i18n="heroEyebrow">CONSULTORIA EMPRESARIAL PARA PEQUENAS EMPRESAS</span></p>
+        <h1 data-i18n="heroTitle">Seu negócio merece mais do que decisões no escuro.</h1>
+        <p class="hero-lead" data-i18n="heroText">Ajudamos você a organizar a gestão, entender o que acontece na operação e conduzir sua empresa com mais clareza e confiança.</p>
         <div class="hero-actions">
-          <a class="button button-primary contact-link" href="#contact" data-i18n="hero_cta">Converse com a GL</a>
-          <a class="text-link" href="#services" data-i18n="hero_secondary">Conheça nossa atuação <span aria-hidden="true">→</span></a>
+          <a class="button button-gold" href="#contact" data-i18n="heroButton">Converse sobre sua empresa <span>↗</span></a>
+          <a class="text-link" href="#approach" data-i18n="heroSecondary">Conheça nossa abordagem <span>↓</span></a>
         </div>
-        <div class="hero-note">
-          <span class="note-line"></span>
-          <span data-i18n="hero_note">Gestão simples, próxima e orientada à realidade do negócio.</span>
+        <div class="hero-proof">
+          <div class="proof-item"><strong>10+</strong><span data-i18n="proofYears">anos de experiência em negócios</span></div>
+          <div class="proof-divider"></div>
+          <div class="proof-item"><strong>USA</strong><span data-i18n="proofUs">formação e experiência internacional</span></div>
+          <div class="proof-divider"></div>
+          <div class="proof-item"><strong>China</strong><span data-i18n="proofChina">experiência em negócios internacionais</span></div>
         </div>
       </div>
-      <div class="hero-side-label" aria-hidden="true">GL / BUSINESS CONSULTING</div>
+      <div class="hero-side-note"><span>GL</span><small>CLAREZA<br>GESTÃO<br>EVOLUÇÃO</small></div>
     </section>
 
-    <section class="intro-section section-pad" id="about">
-      <div class="container intro-grid">
+    <section class="problem-section section-pad">
+      <div class="container two-col">
         <div>
-          <p class="eyebrow eyebrow-dark" data-i18n="about_eyebrow">SOBRE A GL CONSULTING</p>
-          <h2 data-i18n="about_title">Seu negócio não precisa de mais complicação. Precisa de <em>clareza.</em></h2>
+          <p class="eyebrow dark"><span></span><span data-i18n="problemEyebrow">GESTÃO COM MAIS CLAREZA</span></p>
+          <h2 data-i18n="problemTitle">Trabalhar muito não deveria significar administrar no improviso.</h2>
         </div>
-        <div class="intro-text">
-          <p data-i18n="about_p1">Na rotina de uma empresa, é fácil passar o dia resolvendo urgências e terminar sem uma visão clara do que aconteceu — e do que precisa acontecer em seguida.</p>
-          <p data-i18n="about_p2">A GL Consulting trabalha ao lado do empresário para organizar informações, estruturar controles e criar uma rotina de gestão que ajude a enxergar problemas, oportunidades e próximos passos.</p>
-          <p class="strong-line" data-i18n="about_bold">Menos decisões no escuro. Mais confiança para conduzir o negócio.</p>
+        <div class="problem-copy">
+          <p data-i18n="problemText">Em muitas pequenas empresas, o proprietário concentra decisões, vendas, equipe, fornecedores e operação. A rotina não deixa espaço para olhar o negócio de fora — e questões importantes acabam sem resposta.</p>
+          <ul class="question-list">
+            <li data-i18n="question1">Você sabe como a empresa está performando neste mês?</li>
+            <li data-i18n="question2">As responsabilidades e rotinas estão claras para a equipe?</li>
+            <li data-i18n="question3">Você identifica problemas antes que eles se tornem urgentes?</li>
+            <li data-i18n="question4">Tem tempo para planejar, ou apenas resolver o que aparece?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="management-feature">
+      <div class="container management-grid">
+        <div class="management-visual">
+          <div class="visual-frame">
+            <div class="visual-top"><span data-i18n="visualLabel">VISÃO DE GESTÃO</span><span class="visual-dot"></span></div>
+            <div class="visual-heading" data-i18n="visualTitle">Uma empresa mais organizada começa com uma visão clara.</div>
+            <div class="visual-lines"><i></i><i></i><i></i><i></i></div>
+            <div class="visual-bottom"><span>01 / 04</span><span>GL CONSULTING</span></div>
+          </div>
+          <div class="gold-square"></div>
+        </div>
+        <div class="management-copy">
+          <p class="eyebrow"><span></span><span data-i18n="managementEyebrow">NOSSO PONTO DE PARTIDA</span></p>
+          <h2 data-i18n="managementTitle">Business Management</h2>
+          <p data-i18n="managementText">Nosso serviço de entrada é ajudar o empresário a organizar a casa: entender a situação atual, definir prioridades, estruturar rotinas e criar um acompanhamento simples que apoie as decisões do dia a dia.</p>
+          <ul class="check-list">
+            <li data-i18n="managementBullet1">Diagnóstico da gestão e dos principais desafios</li>
+            <li data-i18n="managementBullet2">Organização de prioridades, responsabilidades e rotinas</li>
+            <li data-i18n="managementBullet3">Definição de objetivos e indicadores essenciais</li>
+            <li data-i18n="managementBullet4">Acompanhamento da execução e evolução</li>
+          </ul>
+          <a class="inline-link" href="#contact" data-i18n="managementLink">Vamos entender sua empresa <span>↗</span></a>
         </div>
       </div>
     </section>
@@ -70,69 +104,86 @@
     <section class="services-section section-pad" id="services">
       <div class="container">
         <div class="section-heading">
-          <div>
-            <p class="eyebrow" data-i18n="services_eyebrow">O QUE FAZEMOS</p>
-            <h2 data-i18n="services_title">Organizamos a gestão para<br><span>o negócio avançar.</span></h2>
-          </div>
-          <p data-i18n="services_intro">O trabalho começa entendendo a realidade da empresa. A partir daí, definimos o que precisa ser organizado primeiro e construímos soluções práticas, sem burocracia desnecessária.</p>
+          <div><p class="eyebrow dark"><span></span><span data-i18n="servicesEyebrow">ÁREAS DE ATUAÇÃO</span></p><h2 data-i18n="servicesTitle">Gestão prática para desafios reais.</h2></div>
+          <p data-i18n="servicesIntro">Começamos pela gestão e, conforme as necessidades da empresa, trabalhamos também em processos, desempenho e planejamento.</p>
         </div>
         <div class="service-grid">
-          <article class="service-card">
-            <span class="service-number">01</span>
-            <div class="service-icon" aria-hidden="true">↗</div>
-            <h3 data-i18n="service1_title">Organização da gestão</h3>
-            <p data-i18n="service1_text">Estruturação de rotinas, responsabilidades e controles para o empresário ter uma visão mais organizada da operação.</p>
+          <article class="service-card featured">
+            <div class="service-number">01</div><div class="service-icon">↗</div>
+            <p class="service-tag" data-i18n="service1Tag">SERVIÇO DE ENTRADA</p>
+            <h3>Business Management</h3>
+            <p data-i18n="service1Text">Organização da gestão, rotinas, responsabilidades, prioridades e acompanhamento do negócio.</p>
+            <a href="#contact" data-i18n="serviceLink">Saiba como podemos ajudar <span>↗</span></a>
           </article>
           <article class="service-card">
-            <span class="service-number">02</span>
-            <div class="service-icon" aria-hidden="true">▤</div>
-            <h3 data-i18n="service2_title">Controles e indicadores</h3>
-            <p data-i18n="service2_text">Definição de números essenciais e acompanhamento simples para entender resultados, custos, vendas e tendências.</p>
+            <div class="service-number">02</div><div class="service-icon">⌘</div>
+            <h3>Operational Efficiency</h3>
+            <p data-i18n="service2Text">Melhoria de processos, compras, fornecedores, estoque, produtividade e uso de recursos.</p>
+            <a href="#contact" data-i18n="serviceLink">Saiba como podemos ajudar <span>↗</span></a>
           </article>
           <article class="service-card">
-            <span class="service-number">03</span>
-            <div class="service-icon" aria-hidden="true">⌘</div>
-            <h3 data-i18n="service3_title">Processos e eficiência</h3>
-            <p data-i18n="service3_text">Identificação de gargalos, desperdícios e oportunidades para melhorar a forma como o trabalho acontece.</p>
+            <div class="service-number">03</div><div class="service-icon">▥</div>
+            <h3>Business Performance</h3>
+            <p data-i18n="service3Text">Indicadores essenciais para acompanhar vendas, despesas, margens e evolução da empresa.</p>
+            <a href="#contact" data-i18n="serviceLink">Saiba como podemos ajudar <span>↗</span></a>
           </article>
           <article class="service-card">
-            <span class="service-number">04</span>
-            <div class="service-icon" aria-hidden="true">◎</div>
-            <h3 data-i18n="service4_title">Acompanhamento de resultados</h3>
-            <p data-i18n="service4_text">Apoio na leitura dos resultados e na definição de ações para que os avanços não fiquem só no planejamento.</p>
+            <div class="service-number">04</div><div class="service-icon">◎</div>
+            <h3>Strategic Planning &amp; Advisory</h3>
+            <p data-i18n="service4Text">Planejamento, análise de oportunidades e apoio ao empresário nas decisões importantes.</p>
+            <a href="#contact" data-i18n="serviceLink">Saiba como podemos ajudar <span>↗</span></a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="statement-section">
-      <div class="container statement-inner">
-        <p class="eyebrow" data-i18n="statement_eyebrow">UMA GESTÃO MAIS CONSCIENTE</p>
-        <h2 data-i18n="statement_title">Você conhece o resultado do seu negócio — ou só sabe o quanto trabalhou hoje?</h2>
-        <p data-i18n="statement_text">Com informações organizadas e uma rotina consistente, fica mais fácil identificar o que está funcionando, corrigir o que pesa e decidir onde colocar energia.</p>
-        <a class="button button-light contact-link" href="#contact" data-i18n="statement_cta">Vamos conversar</a>
-      </div>
-    </section>
-
-    <section class="method-section section-pad" id="method">
+    <section class="approach-section section-pad" id="approach">
       <div class="container">
-        <div class="section-heading method-heading">
-          <div>
-            <p class="eyebrow eyebrow-dark" data-i18n="method_eyebrow">NOSSA ABORDAGEM</p>
-            <h2 data-i18n="method_title">Prático, próximo<br><span>e feito para funcionar.</span></h2>
-          </div>
-          <p data-i18n="method_intro">Não existe uma fórmula igual para toda empresa. Nosso papel é entender o contexto, priorizar o que gera impacto e implementar junto com quem vive a operação.</p>
+        <div class="section-heading light-heading">
+          <div><p class="eyebrow"><span></span><span data-i18n="approachEyebrow">NOSSA ABORDAGEM</span></p><h2 data-i18n="approachTitle">Entender. Organizar. Acompanhar. Evoluir.</h2></div>
+          <p data-i18n="approachIntro">Sem fórmulas prontas ou relatórios que ficam na gaveta. O trabalho é construído a partir da realidade e das prioridades de cada empresa.</p>
         </div>
         <div class="steps">
-          <article class="step">
-            <span>01</span><div><h3 data-i18n="step1_title">Entender</h3><p data-i18n="step1_text">Conhecemos a empresa, seus desafios, objetivos e a forma como a gestão funciona hoje.</p></div>
-          </article>
-          <article class="step">
-            <span>02</span><div><h3 data-i18n="step2_title">Organizar</h3><p data-i18n="step2_text">Definimos prioridades e estruturamos controles, processos e indicadores adequados à realidade do negócio.</p></div>
-          </article>
-          <article class="step">
-            <span>03</span><div><h3 data-i18n="step3_title">Acompanhar</h3><p data-i18n="step3_text">Avaliamos os resultados, identificamos ajustes e ajudamos a transformar decisões em ações.</p></div>
-          </article>
+          <article><span>01</span><h3 data-i18n="step1Title">Entender</h3><p data-i18n="step1Text">Conhecemos a empresa, seus objetivos, desafios e a forma como o trabalho acontece hoje.</p></article>
+          <article><span>02</span><h3 data-i18n="step2Title">Organizar</h3><p data-i18n="step2Text">Definimos prioridades, responsabilidades, processos e formas simples de acompanhamento.</p></article>
+          <article><span>03</span><h3 data-i18n="step3Title">Acompanhar</h3><p data-i18n="step3Text">Apoiamos a execução, avaliamos o que está funcionando e ajustamos o que for necessário.</p></article>
+          <article><span>04</span><h3 data-i18n="step4Title">Evoluir</h3><p data-i18n="step4Text">Com mais clareza sobre a operação, o empresário pode decidir e planejar os próximos passos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="founder-section section-pad" id="founder">
+      <div class="container founder-grid">
+        <div class="founder-aside">
+          <div class="founder-monogram">GL<span>.</span></div>
+          <p data-i18n="founderAside">EXECUTIVE EXPERIENCE<br>INTERNATIONAL PERSPECTIVE<br>PRACTICAL MANAGEMENT</p>
+          <div class="founder-rule"></div>
+          <span class="founder-location">BRAZIL · USA · ASIA</span>
+        </div>
+        <div class="founder-content">
+          <p class="eyebrow dark"><span></span><span data-i18n="founderEyebrow">FUNDADOR & CONSULTOR PRINCIPAL</span></p>
+          <h2>Gabriel Lemos</h2>
+          <p class="founder-role" data-i18n="founderRole">Business Executive with Director and GM Experience</p>
+          <p data-i18n="founderP1">Gabriel Lemos é executivo de negócios e consultor de gestão, com mais de uma década de experiência em liderança empresarial, gestão geral, operações, cadeia de suprimentos, compras e desenvolvimento de negócios.</p>
+          <p data-i18n="founderP2">Ao longo de sua trajetória, ocupou posições de liderança como Diretor e General Manager, com responsabilidade por diferentes áreas da operação, planejamento financeiro, equipes, fornecedores, produção e atividades comerciais.</p>
+          <p data-i18n="founderP3">Sua formação internacional inclui um bacharelado em Business Analytics pela Brigham Young University–Idaho, nos Estados Unidos, além de mais de seis anos de experiência acadêmica e profissional no país.</p>
+          <p data-i18n="founderP4">Também desenvolveu experiência em negócios internacionais, especialmente em relações comerciais, sourcing e importações com a China, além de atuação e exposição profissional em Hong Kong e na Coreia do Sul.</p>
+          <p data-i18n="founderP5">Na GL Consulting, combina experiência executiva, perspectiva internacional e pensamento analítico para ajudar pequenas empresas a fortalecer sua gestão, organizar operações e tomar decisões mais conscientes.</p>
+          <div class="founder-credentials">
+            <div><strong>10+</strong><span data-i18n="credential1">anos em gestão e negócios</span></div>
+            <div><strong>6+</strong><span data-i18n="credential2">anos de experiência nos EUA</span></div>
+            <div><strong>BA</strong><span data-i18n="credential3">Business Analytics · BYU–Idaho</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fit-section section-pad">
+      <div class="container fit-grid">
+        <div><p class="eyebrow dark"><span></span><span data-i18n="fitEyebrow">PARA QUEM TRABALHAMOS</span></p><h2 data-i18n="fitTitle">Uma parceria para quem está à frente de uma pequena empresa.</h2></div>
+        <div class="fit-copy">
+          <p data-i18n="fitText">Trabalhamos com proprietários e equipes que querem sair do improviso, ganhar organização e construir uma gestão mais consistente — sem complicar o negócio com processos desnecessários.</p>
+          <div class="fit-pills"><span data-i18n="fit1">Empresas familiares</span><span data-i18n="fit2">Comércio e varejo</span><span data-i18n="fit3">Distribuição</span><span data-i18n="fit4">Serviços</span><span data-i18n="fit5">Empresas em crescimento</span></div>
         </div>
       </div>
     </section>
@@ -140,37 +191,37 @@
     <section class="contact-section section-pad" id="contact">
       <div class="container contact-grid">
         <div>
-          <p class="eyebrow" data-i18n="contact_eyebrow">VAMOS CONVERSAR</p>
-          <h2 data-i18n="contact_title">O próximo passo pode começar com uma conversa.</h2>
-          <p class="contact-copy" data-i18n="contact_text">Conte um pouco sobre sua empresa e o desafio que você quer resolver. Vamos entender se podemos ajudar.</p>
-          <div class="contact-details">
-            <div><span data-i18n="contact_email_label">E-mail</span><a id="email-link" href="mailto:SEU_EMAIL_AQUI">Configure seu e-mail</a></div>
-            <div><span data-i18n="contact_location_label">Atuação</span><p data-i18n="contact_location">Ponta Grossa, Curitiba e atendimento remoto.</p></div>
+          <p class="eyebrow"><span></span><span data-i18n="contactEyebrow">PRÓXIMO PASSO</span></p>
+          <h2 data-i18n="contactTitle">Vamos conversar sobre a sua empresa?</h2>
+          <p data-i18n="contactText">Conte um pouco sobre seu negócio e o que você gostaria de organizar ou melhorar. Vamos entender se a GL Consulting pode ajudar.</p>
+          <div class="contact-direct">
+            <a id="emailLink" href="#"><span>✉</span><span id="emailText">Configure seu e-mail em config.js</span></a>
+            <a id="whatsappLink" href="#" target="_blank" rel="noopener"><span>◉</span><span data-i18n="whatsappLabel">Conversar pelo WhatsApp</span></a>
           </div>
         </div>
-        <form class="contact-form" id="contact-form">
-          <label for="name" data-i18n="form_name">Seu nome</label>
-          <input id="name" name="name" type="text" autocomplete="name" required>
-          <label for="company" data-i18n="form_company">Empresa</label>
-          <input id="company" name="company" type="text" autocomplete="organization">
-          <label for="email" data-i18n="form_email">Seu e-mail</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
-          <label for="message" data-i18n="form_message">Como podemos ajudar?</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <button class="button button-primary form-submit" type="submit" data-i18n="form_submit">Preparar mensagem</button>
-          <p class="form-note" data-i18n="form_note">Seu aplicativo de e-mail será aberto com a mensagem pronta para enviar.</p>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <form class="contact-form" id="contactForm">
+          <label for="name" data-i18n="formNameLabel">Seu nome</label>
+          <input id="name" name="name" type="text" required data-i18n-placeholder="formNamePlaceholder" placeholder="Como podemos chamar você?">
+          <label for="business" data-i18n="formBusinessLabel">Nome da empresa</label>
+          <input id="business" name="business" type="text" data-i18n-placeholder="formBusinessPlaceholder" placeholder="Sua empresa">
+          <label for="email" data-i18n="formEmailLabel">Seu e-mail ou telefone</label>
+          <input id="email" name="email" type="text" required data-i18n-placeholder="formEmailPlaceholder" placeholder="Como podemos entrar em contato?">
+          <label for="message" data-i18n="formMessageLabel">O que você gostaria de melhorar?</label>
+          <textarea id="message" name="message" rows="4" required data-i18n-placeholder="formMessagePlaceholder" placeholder="Conte brevemente sobre o desafio da sua empresa."></textarea>
+          <button class="button button-gold form-button" type="submit"><span data-i18n="formButton">Enviar mensagem</span><span>↗</span></button>
+          <small data-i18n="formNote">O formulário abrirá seu aplicativo de e-mail para enviar a mensagem. Nenhum dado é armazenado neste site.</small>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="brand brand-footer" href="#top"><span class="brand-mark">GL</span><span class="brand-name">CONSULTING<span class="brand-dot">.</span></span></a>
-      <p data-i18n="footer_line">Clareza para decidir. Gestão para crescer.</p>
-      <span>© <span id="year"></span> GL Consulting</span>
+    <div class="container footer-main">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark"><span>G</span><b>L</b></span><span class="brand-copy"><strong>GL CONSULTING</strong><small>BUSINESS MANAGEMENT &amp; ADVISORY</small></span></a>
+      <p data-i18n="footerLine">Clareza para administrar. Confiança para crescer.</p>
+      <a href="#home" class="back-top" data-i18n="backTop">Voltar ao topo ↑</a>
     </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> GL Consulting. <span data-i18n="rights">Todos os direitos reservados.</span></span><span data-i18n="footerLocation">Ponta Grossa · Paraná · Brasil</span></div>
   </footer>
 </body>
 </html>

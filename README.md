@@ -1,56 +1,31 @@
-# GL Consulting — site institucional
+# GL Consulting — Website v2
 
-Site estático, responsivo e bilíngue (português/inglês), feito com HTML, CSS e JavaScript puro.
+Corporate, executive-style, bilingual website for GL Consulting. Built with plain HTML, CSS and JavaScript for free static hosting with GitHub Pages.
 
-## Arquivos
+## Files
+- `index.html` — page structure and content
+- `styles.css` — responsive visual design
+- `script.js` — Portuguese/English language switch, mobile navigation and contact form
+- `config.js` — contact details
 
-- `index.html` — estrutura e conteúdo do site
-- `styles.css` — identidade visual e layout responsivo
-- `script.js` — alternância PT/EN, menu mobile e formulário
-- `config.js` — e-mail e WhatsApp que você deve configurar
+## Before publishing
+1. Open `config.js`.
+2. Replace `SEU_EMAIL@DOMINIO.COM` with the official GL Consulting contact email.
+3. Replace `55DDDNUMERO` with the WhatsApp number using country code + area code + number, digits only. Example format: `5542999999999`.
+4. If a contact method is not ready, leave its placeholder; the corresponding link will remain hidden.
 
-## 1. Configuração antes de publicar
+## Update the existing GitHub Pages repository
+1. Extract this ZIP.
+2. Open the existing `gl-consulting-site` repository.
+3. Choose **Add file → Upload files**.
+4. Upload the four website files (`index.html`, `styles.css`, `script.js`, `config.js`) and this `README.md`.
+5. Commit directly to `main`, replacing the existing files when GitHub asks.
+6. GitHub Pages will publish the update automatically.
 
-Abra `config.js` e preencha:
+Keep all five files in the repository root (not inside a nested folder).
 
-```js
-window.GL_CONFIG = {
-  email: "seu-email-real@glconsultingbr.com",
-  whatsapp: "5542999999999"
-};
-```
+## Contact form limitation
+The form uses `mailto:` and opens the visitor's email application. It does not store submissions on a server. A hosted form service or backend would be needed for submissions without an email application.
 
-Use um e-mail que já esteja criado e recebendo mensagens. O WhatsApp deve conter código do país + DDD + número, apenas dígitos. Se não quiser WhatsApp ainda, deixe `whatsapp: ""`.
-
-O formulário é estático: ele prepara uma mensagem no aplicativo de e-mail do visitante. Não armazena dados em servidor.
-
-## 2. Testar localmente
-
-Basta abrir `index.html` no navegador. Para testar de forma mais fiel, use a extensão Live Server do VS Code ou rode um servidor local simples.
-
-## 3. Publicar gratuitamente no GitHub Pages
-
-1. Crie ou entre em uma conta em https://github.com.
-2. Crie um repositório público chamado `glconsulting-site`.
-3. Envie os quatro arquivos deste pacote para a raiz do repositório.
-4. No GitHub, abra **Settings → Pages**.
-5. Em **Build and deployment**, escolha **Deploy from a branch**.
-6. Selecione a branch `main` e a pasta `/ (root)` e salve.
-7. Aguarde o GitHub publicar o endereço temporário `https://SEU-USUARIO.github.io/glconsulting-site/`.
-8. Em **Settings → Pages → Custom domain**, informe `glconsultingbr.com` e salve.
-9. No painel do registrador onde o domínio está, configure os registros DNS indicados pela documentação atual do GitHub Pages. Para domínio raiz, normalmente são registros A para os endereços IPv4 publicados pelo GitHub; também é possível configurar `www` com CNAME para `SEU-USUARIO.github.io`.
-10. Depois que o DNS propagar, volte a **Settings → Pages** e habilite **Enforce HTTPS** quando a opção estiver disponível.
-
-Documentação oficial: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
-
-## 4. Alternativa: Cloudflare Pages
-
-Também é possível importar o repositório do GitHub em https://pages.cloudflare.com/ e conectar o domínio. O plano gratuito atende sites institucionais estáticos; confira os limites atuais do plano antes de publicar.
-
-## Observações importantes
-
-- O domínio `glconsultingbr.com` precisa continuar registrado e renovado.
-- Hospedagem gratuita não inclui caixa de e-mail. E-mail profissional é um serviço separado (por exemplo, Google Workspace ou outro provedor).
-- Não publique dados privados, senhas ou chaves em repositório público.
-- O site usa Google Fonts. Se preferir não depender de um serviço externo, remova os imports de fontes no `<head>` e o CSS usará fontes alternativas.
-- Revise os textos, e-mail e telefone antes de divulgar o endereço publicamente.
+## Domain / HTTPS
+This website package does not change DNS or GitHub Pages domain settings. Keep the existing custom domain configuration. HTTPS certificate provisioning is separate from editing the website files.

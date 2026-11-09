@@ -1,13 +1,9 @@
 /*
-  CONFIGURAÇÃO DA GL CONSULTING
-  Edite os valores abaixo antes de publicar o site.
+  GL Consulting — configuração de contato
+  Antes de divulgar o site, substitua os valores abaixo pelos contatos oficiais.
+  WhatsApp deve conter apenas números, com código do país e DDD. Ex.: 5542999999999
 */
 window.GL_CONFIG = {
-  // Informe um endereço que já esteja criado e recebendo e-mails.
-  // Exemplo: "gabriel@glconsultingbr.com"
-  email: "",
-
-  // Opcional: WhatsApp no formato internacional, somente números.
-  // Exemplo Brasil: "5542999999999"
-  whatsapp: ""
+  email: "contato@glconsultingbr.COM",
+  whatsapp: "5541987242085"
 };
