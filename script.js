@@ -29,8 +29,8 @@ const translations = {
     contact_eyebrow:"VAMOS CONVERSAR",contact_title:"O próximo passo pode começar com uma conversa.",
     contact_text:"Conte um pouco sobre sua empresa e o desafio que você quer resolver. Vamos entender se faz sentido trabalharmos juntos.",
     contact_email_label:"E-mail",contact_whatsapp_label:"WhatsApp",contact_location_label:"Atuação",contact_location:"Ponta Grossa, Curitiba e atendimento remoto.",
-    form_name:"Seu nome",form_company:"Empresa",form_email:"Seu e-mail",form_message:"Como podemos ajudar?",form_submit:"Preparar mensagem",
-    form_note:"Seu aplicativo de e-mail será aberto com a mensagem pronta para enviar.",form_success:"Abrindo seu aplicativo de e-mail…",
+    form_name:"Seu nome",form_company:"Empresa",form_email:"Seu e-mail",form_message:"Como podemos ajudar?",form_submit:"Enviar mensagem",
+    form_note:"Sua mensagem será enviada diretamente para nossa equipe.",
     footer_line:"Gestão clara. Negócios mais preparados."
   },
   en: {
@@ -63,8 +63,8 @@ const translations = {
     contact_eyebrow:"LET’S TALK",contact_title:"The next step can start with a conversation.",
     contact_text:"Tell us a little about your business and the challenge you want to solve. We’ll explore whether working together makes sense.",
     contact_email_label:"Email",contact_whatsapp_label:"WhatsApp",contact_location_label:"Based in",contact_location:"Ponta Grossa, Curitiba, Brazil — also available remotely.",
-    form_name:"Your name",form_company:"Company",form_email:"Your email",form_message:"How can we help?",form_submit:"Prepare message",
-    form_note:"Your email app will open with a message ready to send.",form_success:"Opening your email app…",
+    form_name:"Your name",form_company:"Company",form_email:"Your email",form_message:"How can we help?",form_submit:"Send message",
+    form_note:"Your message will be sent directly to our team.",
     footer_line:"Clear management. Better-prepared businesses."
   }
 };
@@ -108,21 +108,6 @@ document.querySelectorAll(".whatsapp-link").forEach((link) => {
   link.rel = "noopener noreferrer";
 });
 
-document.getElementById("contact-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const form = new FormData(event.currentTarget);
-  const subject = currentLanguage === "pt" ? "Contato pelo site GL Consulting" : "Website inquiry - GL Consulting";
-  const body = [
-    `${currentLanguage === "pt" ? "Nome" : "Name"}: ${form.get("name")}`,
-    `${currentLanguage === "pt" ? "Empresa" : "Company"}: ${form.get("company") || "-"}`,
-    `${currentLanguage === "pt" ? "E-mail" : "Email"}: ${form.get("email")}`,
-    "",
-    `${currentLanguage === "pt" ? "Mensagem" : "Message"}:`,
-    form.get("message")
-  ].join("\n");
-  document.getElementById("form-status").textContent = translations[currentLanguage].form_success;
-  window.location.href = `mailto:${config.email || "contato@glconsultingbr.com"}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
 
 document.getElementById("year").textContent = new Date().getFullYear();
 setLanguage("pt");
