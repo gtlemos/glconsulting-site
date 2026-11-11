@@ -144,3 +144,8 @@ h2 em { color: #a98750; font-style: normal; }
   .hero h1 { font-size: 39px; }
   .contact-details { flex-direction: column; gap: 18px; }
 }
+
+.contact-form .form-submit:disabled { opacity: .65; cursor: wait; }
+.form-status { min-height: 1.5em; line-height: 1.6; }
+.form-status-success { color: #247a4b; font-weight: 700; }
+.form-status-error { color: #b42318; font-weight: 700; }
