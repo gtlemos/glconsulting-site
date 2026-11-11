@@ -31,6 +31,7 @@ const translations = {
     contact_email_label:"E-mail",contact_whatsapp_label:"WhatsApp",contact_location_label:"Atuação",contact_location:"Ponta Grossa, Curitiba e atendimento remoto.",
     form_name:"Seu nome",form_company:"Empresa",form_email:"Seu e-mail",form_message:"Como podemos ajudar?",form_submit:"Enviar mensagem",
     form_note:"Sua mensagem será enviada diretamente para nossa equipe.",
+    form_sending:"Enviando...",form_success:"Mensagem enviada com sucesso! Obrigado pelo contato. Retornaremos em breve.",form_error:"Não foi possível enviar sua mensagem agora. Tente novamente ou fale conosco pelo WhatsApp.",
     footer_line:"Gestão clara. Negócios mais preparados."
   },
   en: {
@@ -65,6 +66,7 @@ const translations = {
     contact_email_label:"Email",contact_whatsapp_label:"WhatsApp",contact_location_label:"Based in",contact_location:"Ponta Grossa, Curitiba, Brazil — also available remotely.",
     form_name:"Your name",form_company:"Company",form_email:"Your email",form_message:"How can we help?",form_submit:"Send message",
     form_note:"Your message will be sent directly to our team.",
+    form_sending:"Sending...",form_success:"Your message was sent successfully. Thank you for reaching out — we’ll be in touch soon.",form_error:"We couldn’t send your message right now. Please try again or contact us on WhatsApp.",
     footer_line:"Clear management. Better-prepared businesses."
   }
 };
@@ -108,6 +110,53 @@ document.querySelectorAll(".whatsapp-link").forEach((link) => {
   link.rel = "noopener noreferrer";
 });
 
+
+
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+const submitButton = contactForm?.querySelector('button[type="submit"]');
+
+if (contactForm && formStatus && submitButton) {
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!contactForm.reportValidity()) return;
+
+    const labels = translations[currentLanguage];
+    submitButton.disabled = true;
+    submitButton.textContent = labels.form_sending;
+    formStatus.textContent = "";
+    formStatus.className = "form-status";
+
+    try {
+      const payload = Object.fromEntries(new FormData(contactForm).entries());
+      payload._replyto = payload.email || "";
+      const response = await fetch("https://formsubmit.co/ajax/gabrieltlemos@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json();
+
+      if (String(result.success) !== "true") {
+        throw new Error(result.message || "Form submission failed");
+      }
+
+      contactForm.reset();
+      formStatus.textContent = labels.form_success;
+      formStatus.classList.add("form-status-success");
+    } catch (error) {
+      console.error("Contact form submission error:", error);
+      formStatus.textContent = labels.form_error;
+      formStatus.classList.add("form-status-error");
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = translations[currentLanguage].form_submit;
+    }
+  });
+}
 
 document.getElementById("year").textContent = new Date().getFullYear();
 setLanguage("pt");
